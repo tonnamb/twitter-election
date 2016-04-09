@@ -1,3 +1,5 @@
+# Search for hashtags and author's screen name
+
 import tweepy
 import limhan
 
@@ -12,6 +14,10 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 query = '#ImWithHer'
-max_tweets = 2
+max_tweets = 3
 searched_tweets = [status for status in \
 	limhan.limit_handled(tweepy.Cursor(api.search, q=query).items(max_tweets))]
+
+for tw in searched_tweets:
+	print tw.text
+	print tw.author.screen_name
