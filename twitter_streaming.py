@@ -17,7 +17,10 @@ class StdOutListener(StreamListener):
         return True
 
     def on_error(self, status):
-        print status
+        #The amount of time a client has to wait after receiving error 420 will increase exponentially each time they make a failed attempt.
+        if status == 420:
+            #returning False in on_data disconnects the stream
+            return False
 
 
 if __name__ == '__main__':
