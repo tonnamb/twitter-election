@@ -14,10 +14,13 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 query = '#ImWithHer'
-max_tweets = 3
+max_tweets = 10
 searched_tweets = [status for status in \
 	limhan.limit_handled(tweepy.Cursor(api.search, q=query).items(max_tweets))]
 
 for tw in searched_tweets:
-	print tw.text
-	print tw.author.screen_name
+	# print tw.text
+	print '{0}: {1}'.format(tw.author.screen_name, tw.author.location)
+	# print tw.author.geo_enabled
+	#if tw.geo:
+	#	print tw.geo

@@ -1,3 +1,5 @@
+# get all posts of a user
+
 import tweepy
 
 consumer_key = 'bfoN8IIW5YUN5tKD7vRaJJ5aY'
@@ -14,5 +16,11 @@ user = api.get_user('sarahhhkidder')
 
 print user.screen_name
 print user.followers_count
-for friend in user.friends():
-	print friend.screen_name
+#for friend in user.friends():
+#	print friend.screen_name
+posts = api.user_timeline('sarahhhkidder')
+
+i = 1
+for post in posts:
+	print '{0}: '.format(i) + post.text
+	i = i + 1
