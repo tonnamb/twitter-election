@@ -20,7 +20,8 @@ searched_tweets = [status for status in \
 
 for tw in searched_tweets:
 	# print tw.text
-	print '{0}: {1}'.format(tw.author.screen_name, tw.author.location)
+	print '{0} ({1}): '.format(tw.author.screen_name, tw.author.location) \
+		+ tw.text
 	# print tw.author.geo_enabled
 	#if tw.geo:
 	#	print tw.geo
