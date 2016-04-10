@@ -1,10 +1,11 @@
 import csv
-with open('ny.csv') as csvfile:
+with open('pa.csv') as csvfile:
 	rows = csv.reader(csvfile)
 	rows = list(rows)
 
 import tweepy
 import time
+import numpy as np
 
 consumer_key = 'bfoN8IIW5YUN5tKD7vRaJJ5aY'
 consumer_secret = 'pZw1UCPbjDQjrTp01IgZL36h4JOo3U0GrokaRUNMHVUVRY6yiq'
@@ -20,7 +21,7 @@ from collections import Counter
 import re
 
 v_matrix = []
-for row in rows[:1000]:
+for row in rows[:100]:
 	user_name = row[0]
 	try:
 		posts = api.user_timeline(user_name)
@@ -54,8 +55,9 @@ for row in rows[:1000]:
 	print 'cruzcrew: {0}'.format(cnt['cruzcrew'])
 	print 'choosecruz: {0}'.format(cnt['choosecruz'])
 	print 'votecruz: {0}'.format(cnt['votecruz'])
+	print np.sum(v_matrix)
 
-import numpy as np
+
 
 print v_matrix
 print np.sum(v_matrix)
