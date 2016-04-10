@@ -14,14 +14,14 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 max_tweets = 1000
-searched_tweets = f_mine.mine(api, '#Hillyes', max_tweets)
+searched_tweets = f_mine.mine(api, '#VoteHillary', max_tweets)
 print len(searched_tweets)
 
 format_sql = []
 for tw in searched_tweets:
 	format_sql.append((tw.author.screen_name, ' '.join(tw.text.splitlines())))
 
-con = lite.connect('clinton3.db')
+con = lite.connect('clinton4.db')
 
 with con:
 
