@@ -31,8 +31,9 @@ with con:
 	cur.execute("CREATE TABLE Clinton( \
 		Id INTEGER PRIMARY KEY, \
 		screen_name TEXT, \
-		tweet TEXT)")
-	cur.executemany("INSERT INTO Clinton(screen_name, tweet) VALUES(?, ?)", format_sql) # Execute many statements
+		tweet TEXT, \
+		UNIQUE(screen_name))")
+	cur.executemany("INSERT OR IGNORE INTO Clinton(screen_name, tweet) VALUES(?, ?)", format_sql) # Execute many statements
 
 #for tw in searched_tweets:
 #	print '{0} ({1}): '.format(tw.author.screen_name, tw.author.location) \
