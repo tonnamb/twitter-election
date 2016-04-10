@@ -14,7 +14,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 max_tweets = 1000
-searched_tweets = f_mine.mine(api, '#hillarymostqualified', max_tweets)
+searched_tweets = f_mine.mine(api, '#Hillyes', max_tweets)
 print len(searched_tweets)
 
 format_sql = []
