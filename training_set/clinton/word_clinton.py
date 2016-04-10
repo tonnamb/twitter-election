@@ -1,9 +1,11 @@
 import sqlite3 as lite
 import sys
 from collections import Counter
+from itertools import chain
+import re
 
 
-con = lite.connect('clinton.db')
+con = lite.connect('clinton1.db')
 
 with con:    
     
@@ -13,11 +15,11 @@ with con:
 
     rows = cur.fetchall() # Retrieve all records
 
-    cnt = Counter(rows[0][0].split())
-    print cnt.keys()
-    print cnt.values()
-    # for i in rows[0][0].split():
-    #	print i
-    # counter = Counter(rows[0][0].split)
-    # w_key = counter.keys()
-    # w_count = counter.values()
+    w_list = []
+    for sr in list(chain(*rows)):
+    	w_list.extend(w.lower() for w in re.findall(r'\w+', sr))
+
+    cnt = Counter(w_list)
+    w_name = cnt.keys()
+    w_count = cnt.values()
+    print cnt.most_common()
