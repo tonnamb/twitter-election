@@ -1,0 +1,12 @@
+export CONSUMER_KEY="6SnfwF93KLtWFZ5bDWJKxXTqQ"
+export CONSUMER_SECRET="yW8hwJTdTdg5PtCOaj0l1x4HpqFWSaRu9Qhw0vIFvnVznNnHq2"
+export ACCESS_KEY="321160404-kFRLspYjm6JocrFy5de5zXeyk3Hx4d5C3Vk03hRH"
+export ACCESS_SECRET="FxZ0WPYVzGKbBJXU22zBFleB40Z0F3REnin9qbJ4Wt3Hr"
+
+export CONSUMER_KEY="yQR6IB2kQ6sf8wNpgLQMS7UBa"
+export CONSUMER_SECRET="9YLtS2bmor30GEDzxs2CbVzznLKL4ZrLqhLSFf1R8DZIUiCauu"
+export ACCESS_KEY="719135489597419520-At5OqvFOXB8RWtb2GEkcNcY5jaS2Aa3"
+export ACCESS_SECRET="LcRZqokWrpo7eIeitaTN8mV1qXtAYYZZyUyClhysNIOev"
+
+
+python ../../../twitter-streamer/streamer/streamer.py '#imwithher,#hillyes,#hillarymostqualified,#votehillary,#feelingthebern,#berniestrong,#bernieorbust,#votebernie,#trumparmy,#makeamericagreatagain,#trumptrain,#votetrump,#unitewitcruz,#cruzcrew,#choosecruz,#votecruz' -f="author.screen_name,text" --location-query="Massachusetts, USA" > ma.csv
