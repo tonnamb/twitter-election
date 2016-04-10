@@ -19,4 +19,4 @@ with con:
 
 	cur.execute("DROP TABLE IF EXISTS Cars") # Delete (drop) Cars table if it exists
 	cur.execute("CREATE TABLE Cars(Id INT, Name TEXT, Price INT)")
-	cur.executemany("INSERT INTO Cars VALUES(?, ?, ?)", cars) # execute many
+	cur.executemany("INSERT INTO Cars VALUES(?, ?, ?)", cars) # Execute many statements
