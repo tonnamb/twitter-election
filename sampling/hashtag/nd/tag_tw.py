@@ -1,5 +1,5 @@
 import csv
-with open('pa.csv') as csvfile:
+with open('nd.csv') as csvfile:
 	rows = csv.reader(csvfile)
 	rows = list(rows)
 
@@ -27,7 +27,10 @@ for row in rows:
 		v_max = np.argmax(v_vector)
 	else:
 		v_max = 4
+
+	
 	v_result.append(template[v_max])
+
 
 	#print cnt.most_common(20)
 	#print 'imwithher: {0}'.format(cnt['imwithher'])

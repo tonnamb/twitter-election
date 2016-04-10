@@ -1,0 +1,1 @@
+python ../../../twitter-streamer/streamer/streamer.py '#imwithher,#hillyes,#hillarymostqualified,#votehillary,#feelingthebern,#berniestrong,#bernieorbust,#votebernie,#trumparmy,#makeamericagreatagain,#trumptrain,#votetrump,#unitewitcruz,#cruzcrew,#choosecruz,#votecruz' -f="author.screen_name,text" --location-query="Virginia, USA" > va.csv
