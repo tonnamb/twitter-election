@@ -1,4 +1,6 @@
 import csv
+import f_limhan
+
 with open('ny.csv') as csvfile:
 	rows = csv.reader(csvfile)
 	rows = list(rows)
@@ -17,7 +19,7 @@ api = tweepy.API(auth)
 
 for row in rows:
 	user_name = row[0]
-	posts = api.user_timeline(user_name)
+	posts = f_limhan.limit_handled(api.user_timeline(user_name))
 	i = 1
 	for post in posts:
 		print '{0}: '.format(i) + post.text
