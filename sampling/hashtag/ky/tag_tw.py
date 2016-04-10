@@ -1,5 +1,5 @@
 import csv
-with open('pa.csv') as csvfile:
+with open('ky.csv') as csvfile:
 	rows = csv.reader(csvfile)
 	rows = list(rows)
 

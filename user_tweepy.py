@@ -12,13 +12,13 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-user = api.get_user('sarahhhkidder')
+user = api.get_user('hillaryclinton')
 
 print user.screen_name
 print user.followers_count
 #for friend in user.friends():
 #	print friend.screen_name
-posts = api.user_timeline('sarahhhkidder')
+posts = api.user_timeline('hillaryclinton')
 
 i = 1
 for post in posts:
