@@ -22,4 +22,5 @@ with con:
     cnt = Counter(w_list)
     w_name = cnt.keys()
     w_count = cnt.values()
-    print cnt.most_common()
+    for i in reversed(cnt.most_common()):
+    	print i
